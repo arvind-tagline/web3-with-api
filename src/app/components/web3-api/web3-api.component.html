@@ -1,0 +1,50 @@
+<div class="row p-3">
+    <div class="col-6">
+        <h3 class="text-center">Accounts & balance</h3>
+        <ng-container *ngIf="accounts.length > 0; else noBalance">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Index</th>
+                        <th scope="col">Account Number</th>
+                        <th scope="col">Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let account of accounts; let i=index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{account.account}}</td>
+                        <td>{{account.balance}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <ng-template #noBalance>
+            <h4>No Data Found</h4>
+        </ng-template>
+    </div>
+    <div class="col-6">
+        <h3 class="text-center">Transction List</h3>
+        <ng-container *ngIf="transctionList.length > 0; else noTrans">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Index</th>
+                        <th scope="col">Account Number</th>
+                        <th scope="col">Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let account of accounts; let i=index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{account.account}}</td>
+                        <td>{{account.balance}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <ng-template #noTrans>
+            <h4 class="text-center">No Transctions Found</h4>
+        </ng-template>
+    </div>
+</div>
